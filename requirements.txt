@@ -1,0 +1,11 @@
+pandas
+numpy
+matplotlib
+wordcloud
+nltk
+spacy
+scikit-learn
+jupyter
+
+# pip install -r requirements.txt
+
