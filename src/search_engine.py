@@ -5,22 +5,22 @@ from sklearn.metrics.pairwise import cosine_similarity
 from nltk.corpus import stopwords
 import nltk
 import spacy
-import re
+import string
 
 # Télécharger les stopwords (une seule fois)
-nltk.download('stopwords')
+nltk.download("stopwords")
 
 # Charger le modèle spaCy
 nlp = spacy.load("en_core_web_sm")
 
 # Charger le corpus et les objets TF-IDF
 print("📥 Chargement des données et du modèle TF-IDF...")
-data = pd.read_csv('../data/clean_corpus.csv')
+data = pd.read_csv("../data/clean_corpus.csv")
 
-with open('../data/tfidf_vectorizer.pkl', 'rb') as f:
+with open("../data/tfidf_vectorizer.pkl", "rb") as f:
     vectorizer = pickle.load(f)
-    
-with open('../data/tfidf_matrix.pkl', 'rb') as f:
+
+with open("../data/tfidf_matrix.pkl", "rb") as f:
     tfidf_matrix = pickle.load(f)
 
 print("✅ Données et modèle chargés avec succès.")
@@ -29,19 +29,17 @@ print("✅ Données et modèle chargés avec succès.")
 # --- 🧹 Prétraitement de la requête ---
 def preprocess_query(query):
     query = query.lower()
-    query = re.sub(r'[^a-zA-Z\s]', '', query)
+    query = query.translate(str.maketrans("", "", string.punctuation))
     doc = nlp(query)
-    tokens = [
-        token.lemma_ for token in doc
-        if token.is_alpha and token.text not in stopwords.words('english')
-    ]
-    return ' '.join(tokens)
+    tokens = [token.lemma_ for token in doc if not token.is_stop or token.like_num]
+    return " ".join(tokens)
 
 
 # --- 🔍 Fonction de recherche principale ---
 def search_movies(query, top_n=10, genre_filter=None, year_filter=None):
     # Prétraiter la requête
     clean_query = preprocess_query(query)
+    print(f"🔍 Requête prétraitée : {clean_query}")
 
     # Transformer la requête en vecteur TF-IDF
     query_vec = vectorizer.transform([clean_query])
@@ -54,16 +52,22 @@ def search_movies(query, top_n=10, genre_filter=None, year_filter=None):
 
     # Créer le DataFrame des résultats
     results = data.iloc[ranked_indices].copy()
-    results['similarity'] = similarities[ranked_indices]
+    results["similarity"] = similarities[ranked_indices]
 
     # Appliquer des filtres optionnels
     if genre_filter:
-        results = results[results['Genres'].str.contains(genre_filter, case=False, na=False)]
+        results = results[
+            results["Genres"].str.contains(genre_filter, case=False, na=False)
+        ]
     if year_filter:
-        results = results[results['Release_Date'].str.contains(str(year_filter), na=False)]
+        results = results[
+            results["Release_Date"].str.contains(str(year_filter), na=False)
+        ]
 
     # Sélectionner les colonnes à afficher
-    results = results[['Title', 'Genres', 'Release_Date', 'Director', 'Vote_Average', 'similarity']]
+    results = results[
+        ["Title", "Genres", "Release_Date", "Director", "Vote_Average", "similarity"]
+    ]
 
     return results.head(top_n)
 
