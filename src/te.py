@@ -156,6 +156,60 @@ def search_union(query, top_n=10):
     
     return results
 
+# ============================================
+# 8. RECHERCHE HYBRIDE (meilleur des deux!)
+# ============================================
+def search_hybrid(query, top_n=10, min_terms_ratio=0.5):
+    """
+    Recherche HYBRIDE: requiert qu'au moins X% des termes soient présents.
+    
+    Args:
+        query: Requête de l'utilisateur
+        top_n: Nombre de résultats
+        min_terms_ratio: Ratio minimum de termes requis (0.5 = 50%)
+    
+    Exemple avec min_terms_ratio=0.5:
+    - "tarantino action" → au moins 1 terme sur 2 doit matcher
+    - "nolan batman dark" → au moins 2 termes sur 3 doivent matcher
+    """
+    query_clean = preprocess_text(query)
+    query_terms = query_clean.split()
+    
+    if not query_terms:
+        return pd.DataFrame()
+    
+    min_terms_required = max(1, int(len(query_terms) * min_terms_ratio))
+    
+    # Compter combien de termes match pour chaque document
+    doc_term_counts = defaultdict(int)
+    for term in query_terms:
+        if term in inverted_index:
+            for doc_id in inverted_index[term]:
+                doc_term_counts[doc_id] += 1
+    
+    # Filtrer les documents ayant au moins min_terms_required termes
+    candidate_docs = [
+        doc_id for doc_id, count in doc_term_counts.items()
+        if count >= min_terms_required
+    ]
+    
+    if not candidate_docs:
+        print(f"Aucun document ne contient au moins {min_terms_required}/{len(query_terms)} termes")
+        return pd.DataFrame()
+    
+    print(f"Recherche hybride: {len(candidate_docs)} documents avec ≥{min_terms_required}/{len(query_terms)} termes")
+    
+    # Calculer la similarité
+    query_vec = vectorizer.transform([query_clean])
+    cosine_sim = cosine_similarity(query_vec, tfidf_matrix[candidate_docs]).flatten()
+    
+    top_indices_in_candidates = cosine_sim.argsort()[-top_n:][::-1]
+    actual_indices = [candidate_docs[i] for i in top_indices_in_candidates]
+    
+    results = df.iloc[actual_indices][['Title', 'Overview', 'Genres', 'Director']].copy()
+    results['score'] = cosine_sim[top_indices_in_candidates]
+    
+    return results
 
 # ============================================
 # 9. TESTS COMPARATIFS
@@ -174,7 +228,10 @@ results_or = search_union("tarantino action", top_n=10)
 if not results_or.empty:
     print(results_or[['Title', 'Director', 'Genres', 'score']])
 
-
+print("\n--- HYBRIDE (50% des termes): Recommandé! ---")
+results_hybrid = search_hybrid("tarantino action", top_n=10, min_terms_ratio=0.5)
+if not results_hybrid.empty:
+    print(results_hybrid[['Title', 'Director', 'Genres', 'score']])
 
 print("\n" + "="*60)
 print("TEST: 'nolan batman dark'")
@@ -182,5 +239,10 @@ print("="*60)
 
 print("\n--- INTERSECTION (tous les termes) ---")
 results = search_intersection("nolan batman dark", top_n=5)
+if not results.empty:
+    print(results[['Title', 'Director', 'score']])
+
+print("\n--- HYBRIDE (au moins 2/3 termes) ---")
+results = search_hybrid("nolan batman dark", top_n=5, min_terms_ratio=0.67)
 if not results.empty:
     print(results[['Title', 'Director', 'score']])
