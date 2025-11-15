@@ -117,8 +117,48 @@ def search_intersection(query, top_n=10):
     results['score'] = cosine_sim[top_indices_in_candidates]
     
     return results
+
 # ============================================
-# 7. TESTS COMPARATIFS
+# 7. RECHERCHE PAR UNION (OR) - Alternative
+# ============================================
+def search_union(query, top_n=10):
+    """
+    Recherche par UNION: retourne les documents contenant 
+    AU MOINS UN des termes de la requête (ton code original).
+    """
+    query_clean = preprocess_text(query)
+    query_terms = query_clean.split()
+    
+    if not query_terms:
+        return pd.DataFrame()
+    
+    # UNION: documents contenant au moins un terme
+    candidate_docs = set()
+    for term in query_terms:
+        if term in inverted_index:
+            candidate_docs.update(inverted_index[term])
+    
+    if not candidate_docs:
+        print("Aucun document trouvé")
+        return pd.DataFrame()
+    
+    candidate_docs = list(candidate_docs)
+    print(f"Union trouvée: {len(candidate_docs)} documents contiennent au moins un terme")
+    
+    query_vec = vectorizer.transform([query_clean])
+    cosine_sim = cosine_similarity(query_vec, tfidf_matrix[candidate_docs]).flatten()
+    
+    top_indices_in_candidates = cosine_sim.argsort()[-top_n:][::-1]
+    actual_indices = [candidate_docs[i] for i in top_indices_in_candidates]
+    
+    results = df.iloc[actual_indices][['Title', 'Overview', 'Genres', 'Director']].copy()
+    results['score'] = cosine_sim[top_indices_in_candidates]
+    
+    return results
+
+
+# ============================================
+# 9. TESTS COMPARATIFS
 # ============================================
 print("\n" + "="*60)
 print("TEST: 'tarantino action'")
@@ -128,6 +168,13 @@ print("\n--- INTERSECTION (AND): Tarantino ET Action ---")
 results_and = search_intersection("tarantino action", top_n=10)
 if not results_and.empty:
     print(results_and[['Title', 'Director', 'Genres', 'score']])
+
+print("\n--- UNION (OR): Tarantino OU Action ---")
+results_or = search_union("tarantino action", top_n=10)
+if not results_or.empty:
+    print(results_or[['Title', 'Director', 'Genres', 'score']])
+
+
 
 print("\n" + "="*60)
 print("TEST: 'nolan batman dark'")
