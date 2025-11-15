@@ -246,3 +246,4 @@ print("\n--- HYBRIDE (au moins 2/3 termes) ---")
 results = search_hybrid("nolan batman dark", top_n=5, min_terms_ratio=0.67)
 if not results.empty:
     print(results[['Title', 'Director', 'score']])
+    
