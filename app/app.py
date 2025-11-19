@@ -168,7 +168,7 @@ if st.button(" Rechercher", type="primary") or query:
 
                     # Résumé
                     if 'Overview' in film and pd.notna(film['Overview']):
-                        with st.expander("📖 Voir le résumé"):
+                        with st.expander(" Voir le résumé"):
                             st.write(film['Overview'])
 
                 st.markdown("---")
