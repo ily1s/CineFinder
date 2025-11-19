@@ -13,7 +13,7 @@ nlp = spacy.load("en_core_web_sm")
 # Charger le dataset de films
 films_df = pd.read_csv("../data/cleaned_movies.csv")
 
-# 🧩 Combiner les colonnes textuelles utiles pour former un texte complet
+# Combiner les colonnes textuelles utiles pour former un texte complet
 # Tu peux ajuster selon les colonnes les plus informatives
 films_df["text"] = (
     films_df["Title"].fillna("")
