@@ -14,19 +14,19 @@ nltk.download("stopwords")
 nlp = spacy.load("en_core_web_sm")
 
 # Charger le corpus et les objets TF-IDF
-print("📥 Chargement des données et du modèle TF-IDF...")
-data = pd.read_csv("../data/clean_corpus.csv")
+print("Chargement des données et du modèle TF-IDF...")
+data = pd.read_csv("data/clean_corpus.csv")
 
-with open("../data/tfidf_vectorizer.pkl", "rb") as f:
+with open("data/tfidf_vectorizer.pkl", "rb") as f:
     vectorizer = pickle.load(f)
 
-with open("../data/tfidf_matrix.pkl", "rb") as f:
+with open("data/tfidf_matrix.pkl", "rb") as f:
     tfidf_matrix = pickle.load(f)
 
-print("✅ Données et modèle chargés avec succès.")
+print("Données et modèle chargés avec succès.")
 
 
-# --- 🧹 Prétraitement de la requête ---
+# --- Prétraitement de la requête ---
 def preprocess_query(query):
     query = query.lower()
     query = query.translate(str.maketrans("", "", string.punctuation))
@@ -35,11 +35,11 @@ def preprocess_query(query):
     return " ".join(tokens)
 
 
-# --- 🔍 Fonction de recherche principale ---
+# --- Fonction de recherche principale ---
 def search_movies(query, top_n=10, genre_filter=None, year_filter=None):
     # Prétraiter la requête
     clean_query = preprocess_query(query)
-    print(f"🔍 Requête prétraitée : {clean_query}")
+    print(f"Requête prétraitée : {clean_query}")
 
     # Transformer la requête en vecteur TF-IDF
     query_vec = vectorizer.transform([clean_query])
@@ -72,9 +72,9 @@ def search_movies(query, top_n=10, genre_filter=None, year_filter=None):
     return results.head(top_n)
 
 
-# --- 🧪 Exemple d’utilisation ---
+# --- Exemple d’utilisation ---
 if __name__ == "__main__":
-    print("=== 🎬 TEST DU MOTEUR DE RECHERCHE ===")
+    print("=== TEST DU MOTEUR DE RECHERCHE ===")
     user_query = input("Entrez une requête de recherche (ex: science fiction 2020): ")
     genre = input("Filtrer par genre (laisser vide si aucun): ")
     year = input("Filtrer par année (laisser vide si aucun): ")
@@ -84,5 +84,6 @@ if __name__ == "__main__":
     year = year if year.strip() else None
 
     results = search_movies(user_query, top_n=10, genre_filter=genre, year_filter=year)
-    print("\n🎯 Résultats les plus pertinents :\n")
+    print("\n Résultats les plus pertinents :\n")
     print(results.to_string(index=False))
+

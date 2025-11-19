@@ -11,7 +11,7 @@ nltk.download("stopwords")
 nlp = spacy.load("en_core_web_sm")
 
 # Charger le dataset de films
-films_df = pd.read_csv("../data/cleaned_movies.csv")
+films_df = pd.read_csv("data/cleaned_movies.csv")
 
 # Combiner les colonnes textuelles utiles pour former un texte complet
 # Tu peux ajuster selon les colonnes les plus informatives
@@ -44,12 +44,12 @@ def preprocess_text(text):
 
 
 # Application du prétraitement
-print("🔄 Prétraitement des films en cours...")
+print("Prétraitement des films en cours...")
 films_df["clean_text"] = films_df["text"].apply(preprocess_text)
-print("✅ Prétraitement terminé !")
+print("Prétraitement terminé !")
 
 # Sauvegarder le corpus nettoyé pour l’indexation
 films_df[
     ["Title", "clean_text", "Genres", "Release_Date", "Director", "Vote_Average"]
-].to_csv("../data/clean_corpus.csv", index=False)
-print("💾 Corpus nettoyé enregistré dans data/clean_corpus.csv")
+].to_csv("data/clean_corpus.csv", index=False)
+print("Corpus nettoyé enregistré dans data/clean_corpus.csv")

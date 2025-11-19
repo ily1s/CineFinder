@@ -156,11 +156,11 @@ def evaluate_system(k=10):
 
     # DataFrame final
     df = pd.DataFrame(results_table, columns=["Query", "Precision", "Recall", "F1-score"])
-    print("\n======= 📊 RÉSUMÉ GLOBAL =======\n")
+    print("\n======= RÉSUMÉ GLOBAL =======\n")
     print(df.to_string(index=False))
 
-    df.to_csv("../data/evaluation_results.csv", index=False)
-    print("\n💾 Résultats enregistrés dans data/evaluation_results.csv")
+    df.to_csv("data/evaluation_results.csv", index=False)
+    print("\n Résultats enregistrés dans data/evaluation_results.csv")
 
 
 # ===========================================================
