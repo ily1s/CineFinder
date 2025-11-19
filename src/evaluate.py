@@ -11,13 +11,13 @@ def evaluate_query(query, relevant_docs, top_n=10):
     top_n : nombre de documents retournés
     """
     
-    print(f"\n\n=== 🎯 Évaluation de la requête : '{query}' ===")
+    print(f"\n\n=== Évaluation de la requête : '{query}' ===")
     
     # 1. Récupérer les résultats du moteur
     results = search_movies(query, top_n=top_n)
     
     returned_docs = list(results["Title"])
-    print("\n📌 Documents retournés :")
+    print("\n Documents retournés :")
     for d in returned_docs:
         print(" -", d)
     
@@ -36,12 +36,12 @@ def evaluate_query(query, relevant_docs, top_n=10):
     f1 = f1_score(y_true, y_pred, zero_division=0)
 
     # 4. Affichage
-    print("\n📊 Matrice de confusion (TP/FP/FN/TN):")
+    print("\n Matrice de confusion (TP/FP/FN/TN):")
     print(cm)
 
-    print(f"\n🔎 Précision : {precision:.3f}")
-    print(f"🔎 Rappel    : {recall:.3f}")
-    print(f"🔎 F1-Score  : {f1:.3f}")
+    print(f"\n Précision : {precision:.3f}")
+    print(f" Rappel    : {recall:.3f}")
+    print(f" F1-Score  : {f1:.3f}")
 
     return {
         "query": query,
