@@ -21,7 +21,7 @@ from search_engine import search_movies, preprocess_query
 # Charger le dataset complet (celui avec les affiches, etc.)
 @st.cache_data
 def load_full_data():
-    return pd.read_csv("../data/cleaned_movies.csv")
+    return pd.read_csv("data/cleaned_movies.csv")
 
 
 data_full = load_full_data()
