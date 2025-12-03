@@ -1,89 +1,115 @@
-import pandas as pd
-import numpy as np
+import os
+import json
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
-from nltk.corpus import stopwords
 import nltk
 import spacy
 import string
 
-# Télécharger les stopwords (une seule fois)
+# -------- CONFIG --------
+DOCS_PATH = "data/Docs/"
 nltk.download("stopwords")
-
-# Charger le modèle spaCy
 nlp = spacy.load("en_core_web_sm")
 
-# Charger le corpus et les objets TF-IDF
-print("Chargement des données et du modèle TF-IDF...")
-data = pd.read_csv("data/clean_corpus.csv")
-
+# -------- Load TF-IDF objects --------
+print("📥 Chargement du modèle TF-IDF...")
 with open("data/tfidf_vectorizer.pkl", "rb") as f:
     vectorizer = pickle.load(f)
 
 with open("data/tfidf_matrix.pkl", "rb") as f:
     tfidf_matrix = pickle.load(f)
 
-print("Données et modèle chargés avec succès.")
+print("✅ Modèle chargé avec succès.")
 
+# -------- Load JSON documents --------
+def load_documents():
+    docs = []
+    for file in os.listdir(DOCS_PATH):
+        if file.endswith(".json"):
+            with open(os.path.join(DOCS_PATH, file), "r", encoding="utf-8") as f:
+                doc = json.load(f)
+                docs.append(doc)
+    return docs
 
-# --- Prétraitement de la requête ---
+documents = load_documents()
+print(f"✅ {len(documents)} documents JSON chargés.")
+
+# -------- Query preprocessing --------
 def preprocess_query(query):
     query = query.lower()
     query = query.translate(str.maketrans("", "", string.punctuation))
+
     doc = nlp(query)
     tokens = [token.lemma_ for token in doc if not token.is_stop or token.like_num]
+
     return " ".join(tokens)
 
+# -------- Main search function --------
+def search_documents(query, top_n=10, genre_filter=None, year_filter=None):
 
-# --- Fonction de recherche principale ---
-def search_movies(query, top_n=10, genre_filter=None, year_filter=None):
-    # Prétraiter la requête
     clean_query = preprocess_query(query)
-    print(f"Requête prétraitée : {clean_query}")
+    print(f"\n🔍 Requête prétraitée : {clean_query}")
 
-    # Transformer la requête en vecteur TF-IDF
-    query_vec = vectorizer.transform([clean_query])
+    query_vector = vectorizer.transform([clean_query])
 
-    # Calculer la similarité cosinus entre la requête et tous les documents
-    similarities = cosine_similarity(query_vec, tfidf_matrix).flatten()
+    similarities = cosine_similarity(query_vector, tfidf_matrix).flatten()
 
-    # Ordonner par score décroissant
-    ranked_indices = similarities.argsort()[::-1]
+    ranked_indices = similarities.argsort()[::-1][:top_n * 2]
 
-    # Créer le DataFrame des résultats
-    results = data.iloc[ranked_indices].copy()
-    results["similarity"] = similarities[ranked_indices]
+    results = []
 
-    # Appliquer des filtres optionnels
-    if genre_filter:
-        results = results[
-            results["Genres"].str.contains(genre_filter, case=False, na=False)
-        ]
-    if year_filter:
-        results = results[
-            results["Release_Date"].str.contains(str(year_filter), na=False)
-        ]
+    for idx in ranked_indices:
+        doc = documents[idx]
 
-    # Sélectionner les colonnes à afficher
-    results = results[
-        ["Title", "Genres", "Release_Date", "Director", "Vote_Average", "similarity"]
-    ]
+        title = doc.get("Title", "")
+        genres = doc.get("Genres", "")
+        year = str(doc.get("Release_Date", ""))[:4]
+        director = doc.get("Director", "")
+        rating = doc.get("Vote_Average", "")
 
-    return results.head(top_n)
+        # Filters
+        if genre_filter and genre_filter.lower() not in str(genres).lower():
+            continue
+        if year_filter and str(year_filter) not in year:
+            continue
+
+        results.append({
+            "Title": title,
+            "Genres": genres,
+            "Year": year,
+            "Director": director,
+            "Rating": rating,
+            "Similarity": round(float(similarities[idx]), 4)
+        })
+
+        if len(results) == top_n:
+            break
+
+    return results
 
 
-# --- Exemple d’utilisation ---
+# -------- Test run --------
 if __name__ == "__main__":
-    print("=== TEST DU MOTEUR DE RECHERCHE ===")
-    user_query = input("Entrez une requête de recherche (ex: science fiction 2020): ")
-    genre = input("Filtrer par genre (laisser vide si aucun): ")
-    year = input("Filtrer par année (laisser vide si aucun): ")
+    print("\n=== 🎬 TEST DU MOTEUR CINEFINDER ===")
 
-    # Si champ vide, on ne passe pas de filtre
+    user_query = input("Entrez une requête (ex: space adventure): ")
+    genre = input("Filtrer par genre (optionnel) : ")
+    year = input("Filtrer par année (optionnel) : ")
+
     genre = genre if genre.strip() else None
     year = year if year.strip() else None
 
-    results = search_movies(user_query, top_n=10, genre_filter=genre, year_filter=year)
-    print("\n Résultats les plus pertinents :\n")
-    print(results.to_string(index=False))
+    results = search_documents(user_query, top_n=10,
+                               genre_filter=genre,
+                               year_filter=year)
 
+    print("\n📌 Résultats les plus pertinents :\n")
+
+    if not results:
+        print("Aucun résultat trouvé.")
+    else:
+        for i, res in enumerate(results, 1):
+            print(f"{i}. {res['Title']} ({res['Year']})")
+            print(f"   Genres : {res['Genres']}")
+            print(f"   Directeur : {res['Director']}")
+            print(f"   Score : {res['Similarity']}\n")

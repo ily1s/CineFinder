@@ -1,66 +1,76 @@
-import pandas as pd
+import os
 import json
+import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from collections import defaultdict
-import numpy as np
+import pickle
 
-# Charger le corpus nettoyé
-print("Chargement du corpus nettoyé...")
-data = pd.read_csv("data/clean_corpus.csv")
+DOCS_PATH = "data/Docs/"
 
-# Vérification rapide
-print(f"{len(data)} documents chargés.")
-print(data.head(2))
+print("📥 Chargement des documents JSON...")
 
-# Liste des documents (textes prétraités)
-documents = data["clean_text"].fillna("").tolist()
+documents = []
+titles = []
 
-# --- Étape 1 : Calcul du TF-IDF ---
-print("Calcul du TF-IDF en cours...")
+# Lire tous les documents JSON
+for file in os.listdir(DOCS_PATH):
+    if file.endswith(".json"):
+        with open(os.path.join(DOCS_PATH, file), "r", encoding="utf-8") as f:
+            data = json.load(f)
 
-vectorizer = TfidfVectorizer(
-    max_features=10000
-)  # on limite à 10000 termes les plus fréquents
+            clean_text = data.get("clean_text", "")
+            title = data.get("Title", f"Doc_{len(titles)+1}")
+
+            documents.append(clean_text)
+            titles.append(title)
+
+print(f"✅ {len(documents)} documents chargés depuis les fichiers JSON.")
+
+# -------------------- Étape 1 : TF-IDF --------------------
+
+print("📊 Calcul du TF-IDF en cours...")
+
+vectorizer = TfidfVectorizer(max_features=10000)
 tfidf_matrix = vectorizer.fit_transform(documents)
 
-# Récupérer le vocabulaire
 terms = vectorizer.get_feature_names_out()
 
-print(f"TF-IDF calculé : {len(terms)} termes indexés.")
+print(f"✅ {len(terms)} termes indexés.")
 
-# --- Étape 2 : Construction de l’index inversé ---
-print("Construction de l’index inversé...")
+# -------------------- Étape 2 : Index inversé --------------------
+
+print("🔁 Construction de l’index inversé...")
 
 inverted_index = defaultdict(list)
 
-# Pour chaque terme, lister les documents où il apparaît et son poids TF-IDF
 for term_index, term in enumerate(terms):
-    # Colonnes non nulles pour ce terme (documents contenant le terme)
     doc_indices = tfidf_matrix[:, term_index].nonzero()[0]
+
     for doc_id in doc_indices:
         weight = tfidf_matrix[doc_id, term_index]
-        inverted_index[term].append(
-            {
-                "doc_id": int(doc_id),
-                "title": data.iloc[doc_id]["Title"],
-                "weight": float(weight),
-            }
-        )
 
-print("Index inversé construit avec succès.")
+        inverted_index[term].append({
+            "doc_id": int(doc_id),
+            "title": titles[doc_id],
+            "weight": float(weight)
+        })
 
-# --- Étape 3 : Sauvegarde de l’index ---
-print("Sauvegarde de l’index dans un fichier JSON...")
+print("✅ Index inversé construit avec succès.")
 
+# -------------------- Étape 3 : Sauvegarde --------------------
+
+print("💾 Sauvegarde des fichiers...")
+
+# Index inversé
 with open("data/inverted_index.json", "w", encoding="utf-8") as f:
-    json.dump(inverted_index, f, indent=2)
+    json.dump(inverted_index, f, indent=2, ensure_ascii=False)
 
-# Sauvegarder aussi la matrice TF-IDF et le vectorizer pour usage futur
-import pickle
-
+# Sauvegarde du vectorizer
 with open("data/tfidf_vectorizer.pkl", "wb") as f:
     pickle.dump(vectorizer, f)
+
+# Sauvegarde de la matrice TF-IDF
 with open("data/tfidf_matrix.pkl", "wb") as f:
     pickle.dump(tfidf_matrix, f)
 
-print("Index inversé, vectorizer et matrice TF-IDF sauvegardés dans /data/")
+print("✅ Tout est sauvegardé avec succès dans le dossier data/")
