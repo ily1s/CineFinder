@@ -1,0 +1,483 @@
+C:\Users\LENOVO\.conda\envs\myenv\python.exe D:\GI5\BOUZID\Projet\CineFinder\src\attempt_sri\evaluation.py
+Checking required NLTK packages...
+   ✓ punkt ready
+   ✓ punkt_tab ready
+   ✓ stopwords ready
+   Downloading wordnet...
+[nltk_data] Downloading package wordnet to
+[nltk_data]     C:\Users\LENOVO\AppData\Roaming\nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package omw-1.4 to
+[nltk_data]     C:\Users\LENOVO\AppData\Roaming\nltk_data...
+   Downloading omw-1.4...
+[nltk_data]   Package omw-1.4 is already up-to-date!
+   ✓ averaged_perceptron_tagger ready
+   ✓ averaged_perceptron_tagger_eng ready
+All NLTK data ready!
+
+
+================================================================================
+      CINEFINDER PRO - MAXIMUM SEARCH QUALITY EDITION
+================================================================================
+TextPreprocessor ready → Lemmatization + POS + WordNet Synonyms
+[Index] Inverted index initialized (in-memory)
+Ranking → BM25 (Industry Standard)
+Preprocessing → Lemmatization + POS + WordNet Synonyms
+Synonym Expansion → Enabled on queries
+
+================================================================================
+INDEXING MOVIE COLLECTION
+================================================================================
+Found 50 movies → starting indexing...
+
+   Indexed 20/50 movies...
+   Indexed 40/50 movies...
+   Indexed 50/50 movies...
+
+[Index] Finalizing index...
+[Index] ✓ Finalized
+
+======================================================================
+INVERTED INDEX STATISTICS
+======================================================================
+Total documents: 50
+Vocabulary size: 1305 unique terms
+Average document length: 44.08 terms
+Total postings: 2204
+
+[Sample Index Entries]
+  'aaron' → appears in 1 documents
+    Example postings: [('row_3', 1)]
+  'abduct' → appears in 1 documents
+    Example postings: [('row_8', 1)]
+  'abernathy' → appears in 1 documents
+    Example postings: [('row_27', 1)]
+  'ability' → appears in 3 documents
+    Example postings: [('row_28', 1), ('row_43', 1), ('row_6', 1)]
+  'able' → appears in 1 documents
+    Example postings: [('row_25', 1)]
+======================================================================
+
+[BM25] Initializing with k1=1.5, b=0.75
+[BM25] Precomputing IDF values...
+[BM25] ✓ Computed IDF for 1305 terms
+
+INDEX READY → 50 movies indexed
+Vocabulary size: 1305 unique terms
+BM25 ranker initialized with real IDF values!
+Loaded 50 movies for professional evaluation
+
+====================================================================================================
+ CINEFINDER PRO — FINAL PROFESSIONAL EVALUATION
+ Lemmatization + WordNet Synonyms + BM25 + F1-Score
+====================================================================================================
+#   Query                                              Target                       Rank   Found
+----------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+SEARCH → 'movie by ridley scott'
+--------------------------------------------------------------------------------
+Found 4 candidate movies
+Top 4 results ready!
+
+1   movie by ridley scott                              The Martian                  1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'adventure movie 2010'
+--------------------------------------------------------------------------------
+Found 38 candidate movies
+Top 10 results ready!
+
+2   adventure movie 2010                               Iron Man 2                   >10    NO
+
+--------------------------------------------------------------------------------
+SEARCH → 'the avengers'
+--------------------------------------------------------------------------------
+Found 5 candidate movies
+Top 5 results ready!
+
+3   the avengers                                       The Avengers                 1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'adventure movie 2003'
+--------------------------------------------------------------------------------
+Found 38 candidate movies
+Top 10 results ready!
+
+4   adventure movie 2003                               The Lord of the Rings: The   >10    NO
+
+--------------------------------------------------------------------------------
+SEARCH → 'the lord of the rings: the fellowship of the ring'
+--------------------------------------------------------------------------------
+Found 12 candidate movies
+Top 10 results ready!
+
+5   the lord of the rings: the fellowship of the ring  The Lord of the Rings: The   1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'avatar'
+--------------------------------------------------------------------------------
+Found 1 candidate movies
+Top 1 results ready!
+
+6   avatar                                             Avatar                       1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'harry potter and the'
+--------------------------------------------------------------------------------
+Found 8 candidate movies
+Top 8 results ready!
+
+7   harry potter and the                               Harry Potter and the Chambe  1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'captain america: the winter soldier'
+--------------------------------------------------------------------------------
+Found 7 candidate movies
+Top 7 results ready!
+
+8   captain america: the winter soldier                Captain America: The Winter  1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'christopher nolan 2005'
+--------------------------------------------------------------------------------
+Found 7 candidate movies
+Top 7 results ready!
+
+9   christopher nolan 2005                             Batman Begins                3      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'comedy movie 1994'
+--------------------------------------------------------------------------------
+Found 8 candidate movies
+Top 8 results ready!
+
+10  comedy movie 1994                                  Forrest Gump                 4      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'movie by jon favreau'
+--------------------------------------------------------------------------------
+Found 4 candidate movies
+Top 4 results ready!
+
+11  movie by jon favreau                               Iron Man                     1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'suicide squad'
+--------------------------------------------------------------------------------
+Found 3 candidate movies
+Top 3 results ready!
+
+12  suicide squad                                      Suicide Squad                1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'animation movie 2003'
+--------------------------------------------------------------------------------
+Found 17 candidate movies
+Top 10 results ready!
+
+13  animation movie 2003                               Finding Nemo                 5      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'fight club'
+--------------------------------------------------------------------------------
+Found 17 candidate movies
+Top 10 results ready!
+
+14  fight club                                         Fight Club                   2      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'movie by james gunn'
+--------------------------------------------------------------------------------
+Found 8 candidate movies
+Top 8 results ready!
+
+15  movie by james gunn                                Guardians of the Galaxy      1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'movie by christopher nolan'
+--------------------------------------------------------------------------------
+Found 9 candidate movies
+Top 9 results ready!
+
+16  movie by christopher nolan                         The Dark Knight              4      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'harry potter and the goblet of fire'
+--------------------------------------------------------------------------------
+Found 9 candidate movies
+Top 9 results ready!
+
+17  harry potter and the goblet of fire                Harry Potter and the Goblet  1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'action movie 2013'
+--------------------------------------------------------------------------------
+Found 29 candidate movies
+Top 10 results ready!
+
+18  action movie 2013                                  Iron Man 3                   6      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'inside out'
+--------------------------------------------------------------------------------
+Found 7 candidate movies
+Top 7 results ready!
+
+19  inside out                                         Inside Out                   5      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'back to the future'
+--------------------------------------------------------------------------------
+Found 9 candidate movies
+Top 9 results ready!
+
+20  back to the future                                 Back to the Future           2      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'the lord of the'
+--------------------------------------------------------------------------------
+Found 6 candidate movies
+Top 6 results ready!
+
+21  the lord of the                                    The Lord of the Rings: The   3      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'joe johnston 2011'
+--------------------------------------------------------------------------------
+Found 1 candidate movies
+Top 1 results ready!
+
+22  joe johnston 2011                                  Captain America: The First   1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'interstellar'
+--------------------------------------------------------------------------------
+Found 1 candidate movies
+Top 1 results ready!
+
+23  interstellar                                       Interstellar                 1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'joss whedon 2015'
+--------------------------------------------------------------------------------
+Found 2 candidate movies
+Top 2 results ready!
+
+24  joss whedon 2015                                   Avengers: Age of Ultron      2      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'movie by gore verbinski'
+--------------------------------------------------------------------------------
+Found 3 candidate movies
+Top 3 results ready!
+
+25  movie by gore verbinski                            Pirates of the Caribbean: T  1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'deadpool'
+--------------------------------------------------------------------------------
+Found 1 candidate movies
+Top 1 results ready!
+
+26  deadpool                                           Deadpool                     1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'the hunger games'
+--------------------------------------------------------------------------------
+Found 9 candidate movies
+Top 9 results ready!
+
+27  the hunger games                                   The Hunger Games             1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'the wolf of wall'
+--------------------------------------------------------------------------------
+Found 3 candidate movies
+Top 3 results ready!
+
+28  the wolf of wall                                   The Wolf of Wall Street      1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'movie by david yates'
+--------------------------------------------------------------------------------
+Found 6 candidate movies
+Top 6 results ready!
+
+29  movie by david yates                               Harry Potter and the Order   2      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'adventure movie 2016'
+--------------------------------------------------------------------------------
+Found 38 candidate movies
+Top 10 results ready!
+
+30  adventure movie 2016                               Captain America: Civil War   >10    NO
+
+--------------------------------------------------------------------------------
+SEARCH → 'adventure movie 2004'
+--------------------------------------------------------------------------------
+Found 38 candidate movies
+Top 10 results ready!
+
+31  adventure movie 2004                               Harry Potter and the Prison  >10    NO
+
+--------------------------------------------------------------------------------
+SEARCH → 'harry potter and the half-blood prince'
+--------------------------------------------------------------------------------
+Found 8 candidate movies
+Top 8 results ready!
+
+32  harry potter and the half-blood prince             Harry Potter and the Half-B  1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'se7en'
+--------------------------------------------------------------------------------
+33  se7en                                              Se7en                        >10    NO
+
+--------------------------------------------------------------------------------
+SEARCH → 'titanic'
+--------------------------------------------------------------------------------
+Found 1 candidate movies
+Top 1 results ready!
+
+34  titanic                                            Titanic                      1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'kenneth branagh 2011'
+--------------------------------------------------------------------------------
+Found 1 candidate movies
+Top 1 results ready!
+
+35  kenneth branagh 2011                               Thor                         1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'pulp fiction'
+--------------------------------------------------------------------------------
+Found 21 candidate movies
+Top 10 results ready!
+
+36  pulp fiction                                       Pulp Fiction                 1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'lilly wachowski 1999'
+--------------------------------------------------------------------------------
+Found 2 candidate movies
+Top 2 results ready!
+
+37  lilly wachowski 1999                               The Matrix                   1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'movie by colin trevorrow'
+--------------------------------------------------------------------------------
+Found 3 candidate movies
+Top 3 results ready!
+
+38  movie by colin trevorrow                           Jurassic World               1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'up'
+--------------------------------------------------------------------------------
+39  up                                                 Up                           >10    NO
+
+--------------------------------------------------------------------------------
+SEARCH → 'mad max: fury road'
+--------------------------------------------------------------------------------
+Found 5 candidate movies
+Top 5 results ready!
+
+40  mad max: fury road                                 Mad Max: Fury Road           1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'the rises'
+--------------------------------------------------------------------------------
+Found 6 candidate movies
+Top 6 results ready!
+
+41  the rises                                          The Dark Knight Rises        6      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'inception'
+--------------------------------------------------------------------------------
+Found 2 candidate movies
+Top 2 results ready!
+
+42  inception                                          Inception                    1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'ant-man'
+--------------------------------------------------------------------------------
+43  ant-man                                            Ant-Man                      >10    NO
+
+--------------------------------------------------------------------------------
+SEARCH → 'drama movie 1972'
+--------------------------------------------------------------------------------
+Found 16 candidate movies
+Top 10 results ready!
+
+44  drama movie 1972                                   The Godfather                8      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'star wars'
+--------------------------------------------------------------------------------
+Found 9 candidate movies
+Top 9 results ready!
+
+45  star wars                                          Star Wars                    2      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'movie by quentin tarantino'
+--------------------------------------------------------------------------------
+Found 4 candidate movies
+Top 4 results ready!
+
+46  movie by quentin tarantino                         Inglourious Basterds         1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'harry potter and the philosopher's stone'
+--------------------------------------------------------------------------------
+Found 8 candidate movies
+Top 8 results ready!
+
+47  harry potter and the philosopher's stone           Harry Potter and the Philos  1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'the shawshank redemption'
+--------------------------------------------------------------------------------
+Found 1 candidate movies
+Top 1 results ready!
+
+48  the shawshank redemption                           The Shawshank Redemption     1      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'drama movie 2010'
+--------------------------------------------------------------------------------
+Found 16 candidate movies
+Top 10 results ready!
+
+49  drama movie 2010                                   Shutter Island               4      YES
+
+--------------------------------------------------------------------------------
+SEARCH → 'quentin tarantino 2012'
+--------------------------------------------------------------------------------
+Found 3 candidate movies
+Top 3 results ready!
+
+50  quentin tarantino 2012                             Django Unchained             1      YES
+----------------------------------------------------------------------------------------------------
+==================================== FINAL PROFESSIONAL RESULTS ====================================
+→ Success@1         : 0.5600
+→ Success@3         : 0.7000
+→ Success@5         : 0.8000
+→ Success@10        : 0.8600
+→ Recall@10         : 0.8600
+→ F1-Score@10       : 0.8600
+→ MRR               : 0.6555
+→ MAP               : 0.6555
+→ NDCG@10           : 0.7050
+====================================================================================================
+This is the definitive, fair, and professional evaluation of your system.
+Use these numbers in your report and defense — they are excellent.
+====================================================================================================
+
+Process finished with exit code 0
