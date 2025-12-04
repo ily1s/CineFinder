@@ -206,3 +206,9 @@ def evaluate():
 
 if __name__ == "__main__":
     evaluate()
+
+
+# === GLOBAL ===
+# Average Precision: 0.49
+# Average Recall: 0.41
+# Average F1-score: 0.44

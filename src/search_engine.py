@@ -88,8 +88,3 @@ if __name__ == "__main__":
             print(f"   Directeur : {r['Director']}")
             print(f"   Score : {r['Similarity']}\n")
 
-
-# === GLOBAL ===
-# Average Precision: 0.49
-# Average Recall: 0.41
-# Average F1-score: 0.44
