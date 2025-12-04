@@ -5,12 +5,11 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 DOCS_PATH = "data/Docs/"
 MODEL_NAME = "all-mpnet-base-v2"
-SIMILARITY_THRESHOLD = 0.35
+SIMILARITY_THRESHOLD = 0.3
 
 print("📥 Chargement du modèle...")
 model = SentenceTransformer(MODEL_NAME)
 
-# Charger les embeddings
 with open("data/embeddings.pkl", "rb") as f:
     data = pickle.load(f)
     doc_embeddings = data["embeddings"]
@@ -18,8 +17,7 @@ with open("data/embeddings.pkl", "rb") as f:
 print(f"✅ {len(doc_embeddings)} embeddings chargés.")
 
 
-# --- Recherche sémantique ---
-def search_documents(query, top_N=10, genre_filter=None, year_filter=None):
+def search_documents(query, genre_filter=None, year_filter=None):
 
     query_embedding = model.encode([query])
 
@@ -41,7 +39,6 @@ def search_documents(query, top_N=10, genre_filter=None, year_filter=None):
         director = doc.get("Director", "")
         rating = doc.get("Vote_Average", "")
 
-        # Filtres optionnels
         if genre_filter and genre_filter.lower() not in str(genres).lower():
             continue
         if year_filter and str(year_filter) not in year:
@@ -59,8 +56,7 @@ def search_documents(query, top_N=10, genre_filter=None, year_filter=None):
             }
         )
 
-    # Trier par pertinence
-    results = sorted(results, key=lambda x: x["Similarity"], reverse=True)[:top_N]
+    results = sorted(results, key=lambda x: x["Similarity"], reverse=True)[:10]
 
     return results
 
@@ -78,7 +74,7 @@ if __name__ == "__main__":
     # year = year if year.strip() else None
 
     results = search_documents(
-        user_query, top_N=10, genre_filter=None, year_filter=None
+        user_query, genre_filter=None, year_filter=None
     )
 
     if not results:
@@ -91,3 +87,9 @@ if __name__ == "__main__":
             print(f"   Genres : {r['Genres']}")
             print(f"   Directeur : {r['Director']}")
             print(f"   Score : {r['Similarity']}\n")
+
+
+# === GLOBAL ===
+# Average Precision: 0.49
+# Average Recall: 0.41
+# Average F1-score: 0.44

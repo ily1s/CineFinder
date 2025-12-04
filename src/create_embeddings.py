@@ -34,11 +34,9 @@ for file in os.listdir(DOCS_PATH):
 
 print(f"✅ {len(texts)} documents chargés.")
 
-# Création des embeddings
 print("⚙️ Création des embeddings...")
 embeddings = model.encode(texts, show_progress_bar=True, normalize_embeddings=True)
 
-# Sauvegarder embeddings ET métadonnées
 with open("data/embeddings.pkl", "wb") as f:
     pickle.dump({"embeddings": embeddings, "documents": documents, "texts": texts}, f)
 
