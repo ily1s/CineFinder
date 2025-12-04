@@ -1,6 +1,6 @@
 {
     "Title": "Harry Potter and the Goblet of Fire",
-    "Overview": "When Harry Potter's name emerges from the Goblet of Fire, he becomes a competitor in a grueling battle for glory among three wizarding schools—the Triwizard Tournament. But since Harry never submitted his name for the Tournament, who did? Now Harry must confront a deadly dragon, fierce water demons and an enchanted maze only to find himself in the cruel grasp of He Who Must Not Be Named.",
+    "Overview": "When Harry Potter's name emerges from the Goblet of Fire, he becomes a competitor in a grueling battle for glory among three wizarding schools\u2014the Triwizard Tournament. But since Harry never submitted his name for the Tournament, who did? Now Harry must confront a deadly dragon, fierce water demons and an enchanted maze only to find himself in the cruel grasp of He Who Must Not Be Named.",
     "Tagline": "Dark And Difficult Times Lie Ahead.",
     "Homepage": "https://www.warnerbros.com/movies/harry-potter-and-goblet-fire/",
     "Release_Date": "2005-11-16",
@@ -8,11 +8,10 @@
     "Runtime": 157,
     "Poster_Path": "/fECBtHlr0RB3foNHDiCBXeg9Bv9.jpg",
     "Genres": "Adventure, Fantasy",
-    "Keywords": "[{\"id\": 2343, \"name\": \"magic\"}, {\"id\": 3737, \"name\": \"dying and death\"}, {\"id\": 3872, \"name\": \"broom\"}, {\"id\": 3873, \"name\": \"sorcerer's apprentice\"}, {\"id\": 3884, \"name\": \"school of witchcraft\"}, {\"id\": 4238, \"name\": \"chosen one\"}, {\"id\": 4252, \"name\": \"black magic\"}, {\"id\": 6271, \"name\": \"boarding school\"}, {\"id\": 10629, \"name\": \"vision\"}, {\"id\": 12380, \"name\": \"tournament\"}, {\"id\": 13130, \"name\": \"teenager\"}, {\"id\": 177912, \"name\": \"wizard\"}, {\"id\": 188178, \"name\": \"teenage hero\"}, {\"id\": 223438, \"name\": \"based on young adult novel\"}]",
+    "Keywords": "magic, dying and death, broom, sorcerer's apprentice, school of witchcraft, chosen one, black magic, boarding school, vision, tournament, teenager, wizard, teenage hero, based on young adult novel",
     "Director": "Mike Newell",
     "budget": 150000000,
     "revenue": 895921036,
     "production_companies": "Patalex IV Productions Limited, Warner Bros., Heyday Films",
-    "Cast": "Daniel Radcliffe, Rupert Grint, Emma Watson",
-    "clean_text": "harry potter goblet fire harry potter emerge goblet fire competitor grueling battle glory three wizarde school — triwizard tournament harry submit tournament harry confront deadly dragon fierce water demon enchant maze find cruel grasp name dark difficult time lie ahead adventure fantasy mike newell daniel radcliffe rupert grint emma watson 2005"
+    "Cast": "Daniel Radcliffe, Rupert Grint, Emma Watson"
 }

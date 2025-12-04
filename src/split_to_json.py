@@ -16,7 +16,7 @@ def split_csv_to_json(input_csv, output_dir):
     # Read the CSV file
     df = pd.read_csv(input_csv)
     # Limit to first 50 rows for sampling
-    df_sample = df.head(50)
+    df_sample = df.head(1000)
     # Iterate over each row and save as a separate JSON file
     for index, row in df_sample.iterrows():
         json_data = row.to_dict()
