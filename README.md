@@ -82,6 +82,38 @@ Le moteur sémantique utilise **BERT** (Sentence-Transformers) pour comprendre l
 ✅ Score de similarité **transparent** (0-1)
 
 ---
+## 📸 Exemples d'Utilisation
+
+### Exemple 1 : Recherche par Mots-clés (BM25)
+**Requête** : "batman"
+
+![Résultats BM25 - Batman](https://github.com/user-attachments/assets/bfb14f25-bc51-41c4-83c8-7b297261e7f7)
+
+**Résultats** : 4 films trouvés avec le moteur BM25
+- Batman (1989)
+- Batman Returns (1992)
+- Batman Begins (2005)
+
+**Avantage BM25** : Reconnaissance immédiate du mot-clé "Batman", résultats précis et directs
+
+---
+
+### Exemple 2 : Recherche Sémantique (BERT)
+**Requête** : "zombie apocalypse"
+
+![Résultats BERT - Zombie Apocalypse](https://github.com/user-attachments/assets/175ecdfe-d7bc-4634-8574-40f338623715)
+
+
+**Résultats** : 7 films trouvés avec le moteur BERT
+- Pontypool (54% Match)
+- Resident Evil: Apocalypse (53% Match)
+- Land of the Dead (53% Match)
+- Day of the Dead (52% Match)
+
+**Avantage BERT** : Compréhension du concept "apocalypse zombie", résultats diversifiés et pertinents par thème
+
+---
+
 
 ##  Comparaison Rapide
 
