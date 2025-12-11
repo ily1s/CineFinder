@@ -335,7 +335,7 @@ class SmartSearchEngine:
 
         return results.reset_index(drop=True)
 
-    def save_index(self, folder_path="../data/index_data"):
+    def save_index(self, folder_path="../../data/index_data"):
         """Save inverted index and metadata to JSON"""
         os.makedirs(folder_path, exist_ok=True)
 
@@ -384,7 +384,7 @@ class SmartSearchEngine:
         print(f"  📄 metadata.json: {metadata_size:.2f} KB")
         print(f"  📊 Total: {index_size + metadata_size:.2f} KB")
 
-    def load_index(self, folder_path="../data"):
+    def load_index(self, folder_path="../../data"):
         """Load inverted index from JSON"""
         print(f"\nLoading index from '{folder_path}'...")
 
