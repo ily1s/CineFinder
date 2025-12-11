@@ -7,6 +7,8 @@ spacy
 scikit-learn
 jupyter
 streamlit
+sentence_transformers
+pickle
 
 # pip install -r requirements.txt
 # streamlit run app.py
