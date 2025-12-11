@@ -28,7 +28,7 @@ def run_search(query, top_n=10):
 
 
 if __name__ == "__main__":
-    query = "action movies of christopher nolan 2010"
+    query = "batman"
     results = run_search(query, top_n=10)
 
     print("\n=== Search Results ===")
