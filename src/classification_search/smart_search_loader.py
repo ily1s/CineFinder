@@ -1,4 +1,4 @@
-from smart_search_engine import SmartSearchEngine  
+from .smart_search_engine import SmartSearchEngine 
 import pandas as pd
 import os
 
