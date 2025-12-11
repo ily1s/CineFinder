@@ -1,7 +1,7 @@
 {
     "Title": "Jaws: The Revenge",
     "Overview": "After another deadly shark attack, Ellen Brody decides she has had enough of New England's Amity Island and moves to the Caribbean to join her son, Michael, and his family. But a great white shark has followed her there, hungry for more lives.",
-    "Tagline": "This time, it’s personal.",
+    "Tagline": "This time, it\u2019s personal.",
     "Homepage": "Unknown",
     "Release_Date": "1987-07-17",
     "Vote_Average": 4.052,
@@ -13,6 +13,5 @@
     "budget": 23000000,
     "revenue": 51881013,
     "production_companies": "Universal Pictures",
-    "Cast": "Lorraine Gary, Lance Guest, Mario Van Peebles",
-    "clean_text": "jaw revenge deadly shark attack ellen brody decide new england amity island move caribbean join son michael family great white shark follow hungry life time personal adventure thriller horror joseph sargent lorraine gary lance guest mario van peeble 1987"
+    "Cast": "Lorraine Gary, Lance Guest, Mario Van Peebles"
 }

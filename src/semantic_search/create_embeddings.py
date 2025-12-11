@@ -7,11 +7,12 @@ from sentence_transformers import SentenceTransformer
 DOCS_PATH = "data/Docs/"
 MODEL_NAME = "all-mpnet-base-v2"
 
-print("📥 Chargement du modèle d'embeddings...")
+print("Chargement du modèle d'embeddings...")
 model = SentenceTransformer(MODEL_NAME)
 
 documents = []
 texts = []
+
 
 for file in os.listdir(DOCS_PATH):
     if file.endswith(".json"):
@@ -32,13 +33,13 @@ for file in os.listdir(DOCS_PATH):
 
             texts.append(text)
 
-print(f"✅ {len(texts)} documents chargés.")
+print(f"{len(texts)} documents chargés.")
 
-print("⚙️ Création des embeddings...")
+print("Création des embeddings...")
 embeddings = model.encode(texts, show_progress_bar=True, normalize_embeddings=True)
 
 with open("data/embeddings.pkl", "wb") as f:
     pickle.dump({"embeddings": embeddings, "documents": documents, "texts": texts}, f)
 
 
-print("✅ Embeddings sauvegardés : data/embeddings.pkl")
+print("Embeddings sauvegardés : data/embeddings.pkl")

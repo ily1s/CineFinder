@@ -1,7 +1,7 @@
 {
     "Title": "Coco Before Chanel",
     "Overview": "Several years after leaving the orphanage, to which her father never returned for her, Gabrielle Chanel finds herself working in a provincial bar. She's both a seamstress for the performers and a singer, earning the nickname Coco from the song she sings nightly with her sister. A liaison with Baron Balsan gives her an entree into French society and a chance to develop her gift for designing.",
-    "Tagline": "Before she was France's famous mademoiselle…",
+    "Tagline": "Before she was France's famous mademoiselle\u2026",
     "Homepage": "http://www.cocoavantchanel.fr",
     "Release_Date": "2009-04-22",
     "Vote_Average": 6.931,
@@ -12,7 +12,6 @@
     "Director": "Anne Fontaine",
     "budget": 0,
     "revenue": 0,
-    "production_companies": "France 2 Cinéma, Haut et Court, SCOPE Invest, Ciné@, Canal+, Warner Bros., CinéCinéma, Scope Pictures, Soficapital, France 2 (FR2), Le Tax Shelter du Gouvernement Fédéral de Belgique, Cofinova 5, Films Distribution, Banque Populaire Images 9",
-    "Cast": "Audrey Tautou, Benoît Poelvoorde, Alessandro Nivola",
-    "clean_text": "coco chanel year leave orphanage father return gabrielle chanel find work provincial bar s seamstress performer singer earn nickname coco song sing nightly sister liaison baron balsan give entree french society chance develop gift design france famous mademoiselle … drama history anne fontaine audrey tautou benoît poelvoorde alessandro nivola 2009"
+    "production_companies": "France 2 Cin\u00e9ma, Haut et Court, SCOPE Invest, Cin\u00e9@, Canal+, Warner Bros., Cin\u00e9Cin\u00e9ma, Scope Pictures, Soficapital, France 2 (FR2), Le Tax Shelter du Gouvernement F\u00e9d\u00e9ral de Belgique, Cofinova 5, Films Distribution, Banque Populaire Images 9",
+    "Cast": "Audrey Tautou, Beno\u00eet Poelvoorde, Alessandro Nivola"
 }

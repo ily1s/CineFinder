@@ -1,7 +1,7 @@
 {
     "Title": "The Spanish Apartment",
     "Overview": "A strait-laced French student moves into an apartment in Barcelona with a cast of six other characters from all over Europe. Together, they speak the international language of love and friendship.",
-    "Tagline": "They came from Paris, Rome, London and Berlin to… the Spanish Apartment… where a year can change a lifetime.",
+    "Tagline": "They came from Paris, Rome, London and Berlin to\u2026 the Spanish Apartment\u2026 where a year can change a lifetime.",
     "Homepage": "Unknown",
     "Release_Date": "2002-06-19",
     "Vote_Average": 7.119,
@@ -9,10 +9,9 @@
     "Poster_Path": "/qKq4uLZDAJhBfpRsfPRYouQ5jW5.jpg",
     "Genres": "Drama, Comedy, Romance",
     "Keywords": "[{\"id\": 90, \"name\": \"paris\"}, {\"id\": 107, \"name\": \"barcelona spain\"}, {\"id\": 567, \"name\": \"alcohol\"}, {\"id\": 1253, \"name\": \"roommate\"}, {\"id\": 9457, \"name\": \"single\"}, {\"id\": 9935, \"name\": \"travel\"}, {\"id\": 9986, \"name\": \"crush\"}, {\"id\": 12105, \"name\": \"student\"}, {\"id\": 14534, \"name\": \"relationship\"}, {\"id\": 14602, \"name\": \"break-up\"}, {\"id\": 14751, \"name\": \"youth\"}, {\"id\": 33648, \"name\": \"celebration\"}, {\"id\": 155939, \"name\": \"group of friends\"}]",
-    "Director": "Cédric Klapisch",
+    "Director": "C\u00e9dric Klapisch",
     "budget": 5300000,
     "revenue": 3897799,
     "production_companies": "Mate Producciones S.A.",
-    "Cast": "Romain Duris, Audrey Tautou, Kelly Reilly",
-    "clean_text": "spanish apartment straitlaced french student move apartment barcelona cast six character europe speak international language love friendship come paris rome london berlin … spanish apartment … year change lifetime drama comedy romance cédric klapisch romain duris audrey tautou kelly reilly 2002"
+    "Cast": "Romain Duris, Audrey Tautou, Kelly Reilly"
 }

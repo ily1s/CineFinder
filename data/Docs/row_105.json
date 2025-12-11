@@ -1,6 +1,6 @@
 {
     "Title": "V for Vendetta",
-    "Overview": "In a world in which Great Britain has become a fascist state, a masked vigilante known only as “V” conducts guerrilla warfare against the oppressive British government. When V rescues a young woman from the secret police, he finds in her an ally with whom he can continue his fight to free the people of Britain.",
+    "Overview": "In a world in which Great Britain has become a fascist state, a masked vigilante known only as \u201cV\u201d conducts guerrilla warfare against the oppressive British government. When V rescues a young woman from the secret police, he finds in her an ally with whom he can continue his fight to free the people of Britain.",
     "Tagline": "People should not be afraid of their governments. Governments should be afraid of their people.",
     "Homepage": "http://vforvendetta.warnerbros.com/",
     "Release_Date": "2006-02-23",
@@ -12,7 +12,6 @@
     "Director": "James McTeigue",
     "budget": 54000000,
     "revenue": 132511035,
-    "production_companies": "Studio Babelsberg, DC Comics, Virtual Studios, Anarchos Productions, Silver Pictures, Warner Bros., Medienboard Berlin-Brandenburg, Fünfte Babelsberg Film",
-    "Cast": "Natalie Portman, Hugo Weaving, Stephen Rea",
-    "clean_text": "v vendetta world great britain fascist state mask vigilante know \" v \" conduct guerrilla warfare oppressive british government v rescue young woman secret police find ally continue fight free people britain people afraid government government afraid people action thriller science fiction james mcteigue natalie portman hugo weave stephen rea 2006"
+    "production_companies": "Studio Babelsberg, DC Comics, Virtual Studios, Anarchos Productions, Silver Pictures, Warner Bros., Medienboard Berlin-Brandenburg, F\u00fcnfte Babelsberg Film",
+    "Cast": "Natalie Portman, Hugo Weaving, Stephen Rea"
 }

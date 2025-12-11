@@ -1,7 +1,7 @@
 {
     "Title": "Not Another Teen Movie",
     "Overview": "On a bet, a gridiron hero at John Hughes High School sets out to turn a bespectacled plain Jane into a beautiful and popular prom queen in this outrageous send-up of the teen movies of the 1980s and '90s.",
-    "Tagline": "They served you Breakfast. They gave you Pie. Now we’re gonna stuff your face.",
+    "Tagline": "They served you Breakfast. They gave you Pie. Now we\u2019re gonna stuff your face.",
     "Homepage": "Unknown",
     "Release_Date": "2001-12-07",
     "Vote_Average": 5.78,
@@ -13,6 +13,5 @@
     "budget": 16000000,
     "revenue": 66468332,
     "production_companies": "Original Film, Columbia Pictures Corporation, Neal H. Moritz Productions",
-    "Cast": "Chyler Leigh, Chris Evans, Jaime Pressly",
-    "clean_text": "teen movie bet gridiron hero john hughes high school set turn bespectacled plain jane beautiful popular prom queen outrageous sendup teen movie 1980 90 serve breakfast give pie go to stuff face comedy joel gallen chyler leigh chris evans jaime pressly 2001"
+    "Cast": "Chyler Leigh, Chris Evans, Jaime Pressly"
 }

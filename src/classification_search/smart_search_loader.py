@@ -1,7 +1,10 @@
-from src.classification_search.smart_search_engine import SmartSearchEngine   # <-- import your class
+from src.classification_search.smart_search_engine import (
+    SmartSearchEngine,
+)  # <-- import your class
 
 INDEX_FOLDER = "data/index_data"
 JSON_FOLDER = "data/Docs"
+
 
 def load_engine():
     """
@@ -11,8 +14,8 @@ def load_engine():
     """
     print("Loading engine with pre-built index...")
     engine = SmartSearchEngine(
-        json_folder=JSON_FOLDER,    # to load the dataframe
-        load_from_file=INDEX_FOLDER # to load the BM25 index
+        json_folder=JSON_FOLDER,  # to load the dataframe
+        load_from_file=INDEX_FOLDER,  # to load the BM25 index
     )
     return engine
 
@@ -28,4 +31,4 @@ if __name__ == "__main__":
     results = run_search(query, top_n=10)
 
     print("\n=== Search Results ===")
-    print(results[['Title', 'Director', 'Genres', 'Release_Date', 'score']])
+    print(results[["Title", "Director", "Genres", "Release_Date", "score"]])

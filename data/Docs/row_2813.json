@@ -1,7 +1,7 @@
 {
     "Title": "Repo Man",
     "Overview": "A down and out young punk gets a job working with a seasoned repo man, but what awaits him in his new career is a series of outlandish adventures revolving around aliens, the CIA, and a most wanted '64 Chevy.",
-    "Tagline": "It’s 4 a.m. Do you know where your car is?",
+    "Tagline": "It\u2019s 4 a.m. Do you know where your car is?",
     "Homepage": "Unknown",
     "Release_Date": "1984-02-20",
     "Vote_Average": 6.674,
@@ -13,6 +13,5 @@
     "budget": 1500000,
     "revenue": 2300000,
     "production_companies": "Edge City",
-    "Cast": "Harry Dean Stanton, Emilio Estevez, Tracey Walter",
-    "clean_text": "repo man young punk get job work seasoned repo man await new career series outlandish adventure revolve alien cia want 64 chevy 4 know car comedy science fiction alex cox harry dean stanton emilio estevez tracey walter 1984"
+    "Cast": "Harry Dean Stanton, Emilio Estevez, Tracey Walter"
 }

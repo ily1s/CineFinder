@@ -1,7 +1,7 @@
 {
     "Title": "Logan's Run",
-    "Overview": "In the 23rd century, inhabitants of a domed city freely experience all of life's pleasures — but no one is allowed to live past 30. Citizens can try for a chance at being \"renewed\" in a civic ceremony on their 30th birthday. Escape is the only other option.",
-    "Tagline": "The only thing you can’t have in Logan’s world is your 30th birthday. Unless you run away.",
+    "Overview": "In the 23rd century, inhabitants of a domed city freely experience all of life's pleasures \u2014 but no one is allowed to live past 30. Citizens can try for a chance at being \"renewed\" in a civic ceremony on their 30th birthday. Escape is the only other option.",
+    "Tagline": "The only thing you can\u2019t have in Logan\u2019s world is your 30th birthday. Unless you run away.",
     "Homepage": "Unknown",
     "Release_Date": "1976-06-23",
     "Vote_Average": 6.596,
@@ -13,6 +13,5 @@
     "budget": 9000000,
     "revenue": 25000000,
     "production_companies": "Metro-Goldwyn-Mayer (MGM)",
-    "Cast": "Michael York, Richard Jordan, Jenny Agutter",
-    "clean_text": "logans run 23rd century inhabitant domed city freely experience life pleasure — one allow live past 30 citizen try chance renew civic ceremony 30th birthday escape option thing logan world 30th birthday run away action science fiction michael anderson michael york richard jordan jenny agutter 1976"
+    "Cast": "Michael York, Richard Jordan, Jenny Agutter"
 }

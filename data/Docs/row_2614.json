@@ -1,6 +1,6 @@
 {
     "Title": "Sicko",
-    "Overview": "Sicko is a Michael Moore documentary about the corrupt health care system in The United States who's main goal is to make profit even if it means losing people’s lives. \"The more people you deny health insurance the more money we make\" is the business model for health care providers in America.",
+    "Overview": "Sicko is a Michael Moore documentary about the corrupt health care system in The United States who's main goal is to make profit even if it means losing people\u2019s lives. \"The more people you deny health insurance the more money we make\" is the business model for health care providers in America.",
     "Tagline": "This might hurt a little.",
     "Homepage": "https://michaelmoore.com/movies/sicko/",
     "Release_Date": "2007-05-18",
@@ -13,6 +13,5 @@
     "budget": 9000000,
     "revenue": 24538513,
     "production_companies": "The Weinstein Company",
-    "Cast": "Michael Moore, George W. Bush, Bill Clinton",
-    "clean_text": "sicko sicko michael moore documentary corrupt health care system united states s main goal profit mean lose people live people deny health insurance money business model health care provider america hurt little documentary comedy drama michael moore michael moore george w bush bill clinton 2007"
+    "Cast": "Michael Moore, George W. Bush, Bill Clinton"
 }

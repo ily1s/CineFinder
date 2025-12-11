@@ -1,6 +1,6 @@
 {
     "Title": "Forrest Gump",
-    "Overview": "A man with a low IQ has accomplished great things in his life and been present during significant historic events—in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.",
+    "Overview": "A man with a low IQ has accomplished great things in his life and been present during significant historic events\u2014in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.",
     "Tagline": "The world will never be the same once you've seen it through the eyes of Forrest Gump.",
     "Homepage": "https://www.paramountmovies.com/movies/forrest-gump",
     "Release_Date": "1994-06-23",
@@ -13,6 +13,5 @@
     "budget": 55000000,
     "revenue": 677945399,
     "production_companies": "Paramount Pictures",
-    "Cast": "Tom Hanks, Robin Wright, Gary Sinise",
-    "clean_text": "forr gump man low iq accomplish great thing life present significant historic event — case far exceed imagine despite achieve one true love elude world ve see eye forr gump comedy drama romance robert zemeckis tom hanks robin wright gary sinise 1994"
+    "Cast": "Tom Hanks, Robin Wright, Gary Sinise"
 }

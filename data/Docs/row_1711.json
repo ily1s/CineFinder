@@ -1,7 +1,7 @@
 {
     "Title": "Automata",
     "Overview": "Jacq Vaucan, an insurance agent of ROC robotics corporation, routinely investigates the case of manipulating a robot. What he discovers will have profound consequences for the future of humanity.",
-    "Tagline": "Your time is coming to an end – Ours is now beginning",
+    "Tagline": "Your time is coming to an end \u2013 Ours is now beginning",
     "Homepage": "http://www.automata-movie.com/",
     "Release_Date": "2014-10-09",
     "Vote_Average": 5.831,
@@ -9,10 +9,9 @@
     "Poster_Path": "/nUEIwqzTWYvEJEcMkHZ8BAi2rL0.jpg",
     "Genres": "Thriller, Science Fiction",
     "Keywords": "[{\"id\": 310, \"name\": \"artificial intelligence\"}, {\"id\": 2217, \"name\": \"rain\"}, {\"id\": 2964, \"name\": \"future\"}, {\"id\": 4565, \"name\": \"dystopia\"}, {\"id\": 14544, \"name\": \"robot\"}, {\"id\": 15174, \"name\": \"ecology\"}, {\"id\": 18034, \"name\": \"desert\"}, {\"id\": 229069, \"name\": \"child hitman\"}]",
-    "Director": "Gabe Ibáñez",
+    "Director": "Gabe Ib\u00e1\u00f1ez",
     "budget": 7000000,
     "revenue": 0,
     "production_companies": "Green Moon Productions, Nu Boyana Viburno",
-    "Cast": "Antonio Banderas, Birgitte Hjort Sørensen, Dylan McDermott",
-    "clean_text": "automata jacq vaucan insurance agent roc robotic corporation routinely investigate case manipulate robot discover profound consequence future humanity time come end – begin thriller science fiction gabe ibáñez antonio bandera birgitte hjort sørensen dylan mcdermott 2014"
+    "Cast": "Antonio Banderas, Birgitte Hjort S\u00f8rensen, Dylan McDermott"
 }

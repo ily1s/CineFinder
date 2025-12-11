@@ -1,7 +1,7 @@
 {
     "Title": "The Front Page",
-    "Overview": "A journalist suffering from burn-out wants to finally say goodbye to his office – but his boss doesn’t like the idea one bit.",
-    "Tagline": "They'd do anything for a story…and do.",
+    "Overview": "A journalist suffering from burn-out wants to finally say goodbye to his office \u2013 but his boss doesn\u2019t like the idea one bit.",
+    "Tagline": "They'd do anything for a story\u2026and do.",
     "Homepage": "Unknown",
     "Release_Date": "1974-11-01",
     "Vote_Average": 7.282,
@@ -13,6 +13,5 @@
     "budget": 4000000,
     "revenue": 0,
     "production_companies": "Universal Studios",
-    "Cast": "Jack Lemmon, Walter Matthau, Susan Sarandon",
-    "clean_text": "page journalist suffer burnout want finally goodbye office – boss like idea one bit d story … comedy billy wilder jack lemmon walter matthau susan sarandon 1974"
+    "Cast": "Jack Lemmon, Walter Matthau, Susan Sarandon"
 }

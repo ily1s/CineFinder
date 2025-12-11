@@ -1,5 +1,5 @@
 {
-    "Title": "[REC]²",
+    "Title": "[REC]\u00b2",
     "Overview": "The action continues from [REC], with the medical officer and a SWAT team outfitted with video cameras are sent into the sealed off apartment to control the situation.",
     "Tagline": "Fear Revisited.",
     "Homepage": "http://www.rec2themovie.com/",
@@ -9,10 +9,9 @@
     "Poster_Path": "/i7wr12YmZfJxXv2R6ksvSffyhAT.jpg",
     "Genres": "Thriller, Horror",
     "Keywords": "[{\"id\": 3684, \"name\": \"religion and supernatural\"}, {\"id\": 4035, \"name\": \"blood sample\"}, {\"id\": 156174, \"name\": \"occult\"}, {\"id\": 156788, \"name\": \"swat team\"}, {\"id\": 159287, \"name\": \"gas mask\"}, {\"id\": 160194, \"name\": \"night vision\"}, {\"id\": 160195, \"name\": \"freezer\"}, {\"id\": 163053, \"name\": \"found footage\"}]",
-    "Director": "Jaume Balagueró",
+    "Director": "Jaume Balaguer\u00f3",
     "budget": 5600000,
     "revenue": 18469680,
     "production_companies": "Filmax",
-    "Cast": "Manuela Velasco, Ferran Terraza, Claudia Silva",
-    "clean_text": "rec² action continue rec medical officer swat team outfit video camera send seal apartment control situation fear revisit thriller horror jaume balagueró manuela velasco ferran terraza claudia silva 2009"
+    "Cast": "Manuela Velasco, Ferran Terraza, Claudia Silva"
 }

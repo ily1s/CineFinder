@@ -1,6 +1,6 @@
 {
     "Title": "Once Upon a Time in Mexico",
-    "Overview": "A CIA agent hires hitman \"El Mariachi\" to assassinate a Mexican general hired by a drug kingpin attempting a coup d'état.",
+    "Overview": "A CIA agent hires hitman \"El Mariachi\" to assassinate a Mexican general hired by a drug kingpin attempting a coup d'\u00e9tat.",
     "Tagline": "The Time Has Come.",
     "Homepage": "Unknown",
     "Release_Date": "2003-09-11",
@@ -13,6 +13,5 @@
     "budget": 29000000,
     "revenue": 98185582,
     "production_companies": "Columbia Pictures Corporation, Dimension Films, Troublemaker Studios",
-    "Cast": "Antonio Banderas, Salma Hayek, Johnny Depp",
-    "clean_text": "time mexico cia agent hire hitman el mariachi assassinate mexican general hire drug kingpin attempt coup détat time come action drama mystery robert rodriguez antonio banderas salma hayek johnny depp 2003"
+    "Cast": "Antonio Banderas, Salma Hayek, Johnny Depp"
 }

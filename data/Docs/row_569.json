@@ -1,7 +1,7 @@
 {
     "Title": "The Machinist",
     "Overview": "Trevor, an insomniac lathe operator, experiences unusual occurrences at work and home. A strange man follows him everywhere, but no one else seems to notice him.",
-    "Tagline": "How do you wake up from a nightmare if you’re not asleep?",
+    "Tagline": "How do you wake up from a nightmare if you\u2019re not asleep?",
     "Homepage": "Unknown",
     "Release_Date": "2004-07-02",
     "Vote_Average": 7.52,
@@ -12,7 +12,6 @@
     "Director": "Brad Anderson",
     "budget": 5000000,
     "revenue": 8203235,
-    "production_companies": "Filmax Entertainment, Castelao Producciones, Canal+ España, Instituto de la Cinematografía y de las Artes Audiovisuales (ICAA), ICF",
-    "Cast": "Christian Bale, Jennifer Jason Leigh, Aitana Sánchez-Gijón",
-    "clean_text": "machinist trevor insomniac lathe operator experience unusual occurrence work home strange man follow one notice wake nightmare asleep thriller drama brad anderson christian bale jennifer jason leigh aitana sánchezgijón 2004"
+    "production_companies": "Filmax Entertainment, Castelao Producciones, Canal+ Espa\u00f1a, Instituto de la Cinematograf\u00eda y de las Artes Audiovisuales (ICAA), ICF",
+    "Cast": "Christian Bale, Jennifer Jason Leigh, Aitana S\u00e1nchez-Gij\u00f3n"
 }
