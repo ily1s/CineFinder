@@ -3,7 +3,7 @@ import pandas as pd
 import json
 
 st.set_page_config(
-    page_title="CineFinder DUAL",
+    page_title="CineFinder ",
     page_icon="movie_camera",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -30,7 +30,6 @@ with st.spinner("Chargement des moteurs..."):
 
 st.markdown("""
 <style>
-    /* 1. Réduire la largeur globale et les marges */
     .block-container {
         max-width: 1400px;
         padding-top: 2rem;
@@ -111,7 +110,7 @@ with col_main:
     with st.container():
         query = st.text_input(
             "Décris le film que tu cherches",
-            placeholder="🔍 ex: nolan 2010, tarantino western, bateau qui coule...",
+            placeholder=" ex: nolan 2010, tarantino western, bateau qui coule...",
             label_visibility="collapsed"
         )
 
