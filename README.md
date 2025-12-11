@@ -15,7 +15,7 @@ Une application web intelligente pour découvrir des films selon vos envies, uti
 
 ##  Vue d'ensemble
 
-**CineFinder ** combine deux approches de recherche puissantes pour offrir une expérience utilisateur optimale :
+**CineFinder** combine deux approches de recherche puissantes pour offrir une expérience utilisateur optimale :
 
 1. **Recherche Traditionnelle (BM25)** : Basée sur les mots-clés exacts
 2. **Recherche Sémantique (BERT)** : Basée sur la compréhension du sens
